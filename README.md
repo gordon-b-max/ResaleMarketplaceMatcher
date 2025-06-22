@@ -1,6 +1,6 @@
 # ResaleMarketplaceMatcher
 
-A Python tool for finding similar clothing items across retail and resale platforms, helping users find better deals while being environmentally conscious.
+A Python application for finding similar clothing items across retail and resale platforms, helping users find better deals while being environmentally conscious.
 
 The application utilizes text similarity-based matching analysis that compares product descriptions from retail websites with similar items on eBay.
 
