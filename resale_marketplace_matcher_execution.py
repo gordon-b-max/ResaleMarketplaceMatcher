@@ -25,15 +25,14 @@ def main():
     # Initialize ClothingMatcher class
     clothing_matcher = ClothingMatcher()
 
-    # Begin executing back-end logic for finding and matching similar resale items
+    # Begin back-end execution for finding and matching similar resale items
     retail_product_title_cleaned = clothing_matcher.clean_retail_product_title(retail_product_title)    
 
-    # Pagination parameters
+    # Configure pagination parameters
     max_items = 5000  # Total items to receive
     items_per_request = 200  # Max allowed by eBay API per request
     all_resale_products = []
     
-    # Fetch items using pagination
     logger.info(f"Begin fetching items from eBay API for {retail_product_title_cleaned}")
     for offset in range(0, max_items, items_per_request):
         # Modify eBay API search params based on preferences
@@ -72,10 +71,10 @@ def main():
 
     # Convert to DataFrame and sort by price ascending
     products = pd.DataFrame(similar_products)
-    products['price'] = pd.to_numeric(products['price'], errors='coerce')  # Convert price to numeric
-    products_sorted = products.sort_values('price', ascending=True)
+    products['price'] = pd.to_numeric(products['price'], errors = 'coerce')  # Convert price to numeric
+    products_sorted = products.sort_values('price', ascending = True)
     
-    # Save result to CSV
+    # Save execution results to CSV
     products_sorted.to_csv("results/similar_resale_products_sorted.csv", index=False)
 
     logger.info("Finished executing resale marketplace logic")

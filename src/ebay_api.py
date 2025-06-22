@@ -11,7 +11,7 @@ class EbayAPI:
     
     def __init__(self, auth_token: str):
         """
-        EBayAPI class provides functionality to search for items on eBay using their free API.
+        EbayAPI class provides functionality to search for items on eBay using their free API.
             Application Name: ResaleMarketplaceMatcher.
             API Documentation: https://developer.ebay.com/api-docs/buy/browse/overview.html
         
@@ -61,7 +61,7 @@ class EbayAPI:
             resale_items: Response item summaries object from eBay API
 
         Returns:
-            List of resale product details from eBay (title, price, color, size, etc.)
+            List of resale product details from eBay (title, url, price)
         """
 
         if len(resale_items) == 0:

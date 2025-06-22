@@ -16,16 +16,12 @@ nltk.download('stopwords', quiet=True)
 class ClothingMatcher:
     """
     ClothingMatcher class provides functionality to compare clothing items from retail websites
-        with similar items on resale platforms, helping users find better deals while being
-        environmentally conscious.
+        with similar items on resale platforms.
     """
     
     def __init__(self):
         """
         Initialize ClothingMatcher with necessary NLP components.
-        
-        Args:
-            ebay_auth_token: Temporary authorization token to access eBay API
         """
         self.ps = PorterStemmer()
         self.stop_words = set(stopwords.words('english'))
@@ -37,10 +33,10 @@ class ClothingMatcher:
         Remove stop words from product title prior to calling eBay API
         
         Args:
-            text: title description to clean from retail website
+            text: product title description from retail website
             
         Returns:
-            Cleaned text string
+            Cleaned retail product text string
         """
         # Split product title into indiviudal words
         words = text.split()
