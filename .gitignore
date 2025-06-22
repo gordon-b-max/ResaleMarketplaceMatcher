@@ -16,10 +16,6 @@ ENV/
 *_token.txt
 *_key.txt
 
-# Data files
-*.csv
-results/
-
 # IDE
 .vscode/
 .idea/
